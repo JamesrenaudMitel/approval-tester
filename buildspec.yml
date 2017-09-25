@@ -1,0 +1,17 @@
+version: 0.2
+
+env:
+  variables:
+    deployRoleArn: "arn:aws:iam::062437324875:role/Deployer"
+    paramRoleArn: "arn:aws:iam::083255287042:role/platform-api-param-access"
+    cloudType: "dev"
+phases:
+  install:
+    commands:
+      - apt-get update
+  pre_build:
+    commands:
+      - echo Installing packages for platform-api-admin-token
+  build:
+    commands:
+      - echo Build and Deployment started on `date`
